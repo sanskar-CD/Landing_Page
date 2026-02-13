@@ -1,246 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Analytics Assignment – Landing Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroTechMinds - Career Advancement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Google Analytics (GA4) Placeholder -->
-  <!-- Replace G-0PBLXD2BX9 with your own Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0PBLXD2BX9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}    
-    gtag('js', new Date());
-    gtag('config', 'G-0PBLXD2BX9');
-  </script>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eff8ff;
+            color: #0d1b2a;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0 60px 0;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    nav {
-      background: #fff;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #2a5298;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    section h2 {
-      color: #1e3c72;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #2a5298;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #2a5298;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 15px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background: #1e3c72;
-    }
-    footer {
-      background: #1e3c72;
-      color: #fff;
-      text-align: center;
-      padding: 30px 20px;
-    }
-  </style>
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 40px;
+        }
+
+        /* Logo Area */
+        .navbar {
+            padding: 10px 0 40px 0;
+            font-size: 26px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-sun { color: #5bc0eb; margin-left: 8px; font-size: 22px; }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        .hero-text {
+            max-width: 55%;
+        }
+
+        h1 {
+            font-size: 44px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .highlight-brand {
+            color: #7b61ff;
+            display: block;
+        }
+
+        .sub-text {
+            font-size: 22px;
+            color: #1a2a3a;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* Vertical Cards */
+        .v-cards-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .v-card {
+            width: 105px;
+            height: 150px;
+            background: linear-gradient(180deg, #7b61ff 0%, #4facfe 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 8px 20px rgba(123, 97, 255, 0.25);
+        }
+
+        .v-card i {
+            font-size: 28px;
+            margin-bottom: 12px;
+            opacity: 0.9;
+        }
+
+        .v-card span {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Horizontal Feature Row */
+        .feature-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .h-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            background: linear-gradient(90deg, #7b61ff 0%, #4facfe 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .h-pill i {
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
+        /* Partner Section */
+        .partners-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            margin-bottom: 40px;
+        }
+
+        .partners-box h3 {
+            color: #0056b3;
+            margin-bottom: 25px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: space-around; /* Changed for better spacing */
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .partner-logo {
+            /* MADE LARGER */
+            max-height: 70px; 
+            max-width: 160px;
+            object-fit: contain;
+            /* REMOVED GRAYSCALE TO MAKE COLORFUL */
+            filter: none; 
+            opacity: 1;
+            transition: transform 0.3s;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.1); /* Adds a nice pop on hover */
+        }
+
+        /* CTA Button */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            background: linear-gradient(90deg, #0062ff 0%, #00a2ff 100%);
+            color: white;
+            border: none;
+            padding: 16px 70px;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 98, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 98, 255, 0.4);
+        }
+
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Digital Analytics & Tracking</h1>
-    <p>A dummy landing page created for understanding Google Analytics, Events, Goals, Bot Traffic, and Proxies.</p>
-    <a class="btn" onclick="trackHeroClick()">Get Started</a>
-  </header>
+    <div class="container">
+        <div class="navbar">
+            GroTechMinds <i class="fa-solid fa-certificate logo-sun"></i>
+        </div>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#events">Events & Goals</a>
-    <a href="#bots">Bot Traffic</a>
-    <a href="#proxy">Proxy</a>
-    <a href="#contact">Contact</a>
-  </nav>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>
+                    Unlock Your Potential with 
+                    <span class="highlight-brand">GrotechMinds</span>
+                </h1>
+                <p class="sub-text">
+                    Industry-Ready Online Courses for Career Advancement
+                </p>
+            </div>
 
-  <section id="about">
-    <h2>About This Assignment</h2>
-    <p>
-      This landing page is a <strong>dummy website</strong> developed as part of an academic assignment. It demonstrates how to:
-    </p>
-    <ul>
-      <li>Create and host a basic HTML website</li>
-      <li>Implement Google Analytics (GA4)</li>
-      <li>Track user interactions using Events</li>
-      <li>Configure Goals (Conversions) in Google Analytics</li>
-      <li>Understand bot traffic and proxy usage</li>
-    </ul>
-  </section>
+            <div class="v-cards-container">
+                <div class="v-card">
+                    <i class="fa-solid fa-desktop"></i>
+                    <span>Technical Focus</span>
+                </div>
+                <div class="v-card">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Domain Training</span>
+                </div>
+                <div class="v-card">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Placement Support</span>
+                </div>
+            </div>
+        </section>
 
-  <section id="events">
-    <h2>Google Analytics Events & Goals</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Tracked Events</h3>
-        <p>Events are user interactions such as clicks, scrolls, and form submissions.</p>
-        <button class="btn" onclick="trackButtonClick()">Track Button Click</button>
-      </div>
-      <div class="card">
-        <h3>Goals / Conversions</h3>
-        <p>Goals represent important actions like sign-ups or contact form submissions.</p>
-        <button class="btn" onclick="trackConversion()">Trigger Conversion</button>
-      </div>
-      <div class="card">
-        <h3>Scroll Tracking</h3>
-        <p>Scrolling can also be tracked as an engagement event.</p>
-        <button class="btn" onclick="trackScroll()">Simulate Scroll Event</button>
-      </div>
+        <section class="feature-row">
+            <div class="h-pill">
+                <i class="fa-solid fa-display"></i> Industry-Ready Online
+            </div>
+            <div class="h-pill">
+                <i class="fa-solid fa-layer-group"></i> Domain Training
+            </div>
+            <div class="h-pill">
+                <i class="fa-solid fa-search"></i> Placement Support
+            </div>
+        </section>
+
+        <section class="partners-box">
+            <h3>Our Placement Partners</h3>
+            <div class="logos-grid">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoDMAgstCwiH2376aMYr8gO-qFL0d5Cucuig&s" alt="Partner 1" class="partner-logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlC4NrtlMbyFcSynG0EQ1wdV9mvfrzJNpRJw&s" alt="Partner 2" class="partner-logo">
+                <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/RWCZER-Legal-IP-Trademarks-CP-MS-logo-740x417-1?wid=406&hei=230&fit=crop&resSharp=1" alt="Microsoft" class="partner-logo">
+                <img src="https://media.licdn.com/dms/image/v2/C560BAQEGmEtbmmQv4Q/company-logo_200_200/company-logo_200_200/0/1654797535162/society_of_graphic_designers_of_canada_logo?e=2147483647&v=beta&t=YglabqMhCFcIEFVfo2xOHA7N0vnI-D5vdSLniE_0ZQI" alt="Partner 4" class="partner-logo">
+            </div>
+        </section>
+
+        <div class="cta-container">
+            <button class="cta-btn">Explore Courses</button>
+        </div>
     </div>
-  </section>
-
-  <section id="bots">
-    <h2>Understanding Bot Traffic</h2>
-    <p>
-      <strong>Bot traffic</strong> refers to non-human visits generated by automated programs called bots.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <h3>Search Engine Bots</h3>
-        <p>Examples: Googlebot, Bingbot. They crawl websites for indexing in search engines.</p>
-      </div>
-      <div class="card">
-        <h3>Malicious Bots</h3>
-        <p>Used for scraping data, credential stuffing, DDoS attacks, or fake traffic generation.</p>
-      </div>
-      <div class="card">
-        <h3>Bot Traffic in Analytics</h3>
-        <p>Bot traffic can inflate sessions, reduce conversion rates, and distort analytics reports.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="proxy">
-    <h2>What is a Proxy & How Bots Use It</h2>
-    <p>
-      A <strong>proxy server</strong> acts as an intermediary between a user (or bot) and the internet.
-    </p>
-    <ul>
-      <li>Hides the original IP address</li>
-      <li>Helps bypass geo-restrictions</li>
-      <li>Used by bots to rotate IPs and avoid detection</li>
-    </ul>
-    <p>
-      Bot services often use <strong>residential, datacenter, or mobile proxies</strong> to appear as legitimate users and generate traffic from different locations.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact (Dummy Form)</h2>
-    <p>This form is used to demonstrate event and goal tracking.</p>
-    <form onsubmit="trackFormSubmit(); return false;">
-      <input type="text" placeholder="Your Name" required style="padding:10px;width:100%;margin-bottom:10px;" />
-      <input type="email" placeholder="Your Email" required style="padding:10px;width:100%;margin-bottom:10px;" />
-      <button type="submit" class="btn">Submit</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 Dummy Analytics Landing Page | Academic Use Only</p>
-  </footer>
-
-  <!-- Event Tracking Scripts -->
-  <script>
-    function trackHeroClick() {
-      gtag('event', 'hero_cta_click', {
-        event_category: 'engagement',
-        event_label: 'Hero Get Started Button'
-      });
-      alert('Hero CTA Click Tracked');
-    }
-
-    function trackButtonClick() {
-      gtag('event', 'button_click', {
-        event_category: 'interaction',
-        event_label: 'Track Button Click'
-      });
-      alert('Button Click Event Tracked');
-    }
-
-    function trackConversion() {
-      gtag('event', 'conversion', {
-        event_category: 'goal',
-        event_label: 'Dummy Conversion'
-      });
-      alert('Conversion Event Triggered');
-    }
-
-    function trackScroll() {
-      gtag('event', 'scroll_event', {
-        event_category: 'engagement',
-        event_label: 'Scroll Button'
-      });
-      alert('Scroll Event Tracked');
-    }
-
-    function trackFormSubmit() {
-      gtag('event', 'form_submit', {
-        event_category: 'lead',
-        event_label: 'Contact Form'
-      });
-      alert('Form Submission Tracked (Goal)');
-    }
-  </script>
 
 </body>
 </html>
+
